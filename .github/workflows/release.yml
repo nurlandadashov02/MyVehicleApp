@@ -47,6 +47,9 @@ jobs:
     name: "Upload image  (${{ needs.get-app-name.outputs.app_name }})"
     runs-on: ubuntu-22.04
     needs: get-app-name
+    permissions:
+      contents: read
+      packages: write
     env:
       APP_NAME: ${{ needs.get-app-name.outputs.app_name }}
 
